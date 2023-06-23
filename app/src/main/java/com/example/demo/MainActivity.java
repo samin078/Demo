@@ -2,20 +2,27 @@ package com.example.demo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.os.Handler;
 
 public class MainActivity extends AppCompatActivity {
 
+    Handler h = new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getData();
-    }
 
-    public void getData() {
-        Toast.makeText(this,"HELLO", Toast.LENGTH_SHORT).show();
+        h.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent i = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(i);
+                finish();
+            }
+        }, 4000);
+
     }
 
 }
