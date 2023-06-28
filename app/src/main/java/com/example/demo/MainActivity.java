@@ -4,11 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-<<<<<<< HEAD
 import android.os.Handler;
-=======
-import android.widget.Toast;
->>>>>>> master
+
 
 public class MainActivity extends AppCompatActivity {
 
