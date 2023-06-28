@@ -4,10 +4,12 @@ package com.example.demo;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -16,59 +18,57 @@ import com.google.android.material.textfield.TextInputEditText;
 
 
 public class MainActivity3 extends AppCompatActivity {
-    TextInputEditText heart,sys,dias,date,time;
+    EditText heart,sys,dias,date,time,comm;
     Button btn;
-    ProgressBar progressBar;
+   SQLite DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
-        heart = findViewById(R.id.hr);
-       sys= findViewById(R.id.sys);
-        dias= findViewById(R.id.dia);
-        date= findViewById(R.id.date);
-        time= findViewById(R.id.tm);
+        heart = findViewById(R.id.editTextTextPersonName6);
+       sys= findViewById(R.id.editTextTextPersonName5);
+        dias= findViewById(R.id.editTextTextPersonName4);
+        date= findViewById(R.id.editTextDate);
+        time= findViewById(R.id.editTextTime);
+        comm=findViewById(R.id.editTextTextPersonName7);
 
         btn = findViewById(R.id.btn_update);
-        progressBar = findViewById(R.id.progressBar);
+
+        DB=new SQLite(this);
+
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                progressBar.setVisibility(View.VISIBLE);
-                String heartr,systolic,diastolic,datee,timee;
-                heartr = String.valueOf(heart.getText());
-                systolic = String.valueOf(sys.getText());
-              diastolic = String.valueOf(dias.getText());
-                datee = String.valueOf(date.getText());
-                timee = String.valueOf(time.getText());
 
+                String heartTXT,systolicTXT,diastolicTXT,dateTXT,timeTXT,comTXT;
+                heartTXT = heart.getText().toString();
+                systolicTXT = sys.getText().toString();
+              diastolicTXT = dias.getText().toString();
+                dateTXT = date.getText().toString();
+                timeTXT = time.getText().toString();
+                comTXT=comm.getText().toString();
 
-                if(TextUtils.isEmpty(heartr)){
-                    Toast.makeText(MainActivity3.this, "Insert heart rate", Toast.LENGTH_SHORT).show();
-                    return;
+              Boolean checkinsertdata=DB.insertuserdata(heartTXT,systolicTXT,diastolicTXT,dateTXT,timeTXT,comTXT);
+                if(checkinsertdata==true){
+                    Toast.makeText(MainActivity3.this, "New measurements are inserted", Toast.LENGTH_SHORT).show();
+
                 }
-                if(TextUtils.isEmpty(systolic)){
-                    Toast.makeText(MainActivity3.this, "Insert Systolic Pressure", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if(TextUtils.isEmpty(diastolic)){
-                    Toast.makeText(MainActivity3.this, "Insert Diastolic Pressure", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if(TextUtils.isEmpty(timee)){
-                    Toast.makeText(MainActivity3.this, "Insert time value", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if(TextUtils.isEmpty(datee)){
-                    Toast.makeText(MainActivity3.this, "Insert date value", Toast.LENGTH_SHORT).show();
+                else
+                {
+                    Toast.makeText(MainActivity3.this, "Found no measurements details", Toast.LENGTH_SHORT).show();
 
                 }
 
 
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this,MainActivity2.class));
     }
 }
