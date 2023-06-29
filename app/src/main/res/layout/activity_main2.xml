@@ -11,26 +11,22 @@
         android:id="@+id/horizontalScrollView"
         android:layout_width="364dp"
         android:layout_height="166dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="528dp"
+        android:layout_marginBottom="424dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.34"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:id="@+id/linearLayout3"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="170dp"
             android:layout_marginTop="11dp"
             android:orientation="horizontal"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView6">
+            app:layout_constraintStart_toStartOf="parent">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/hrt"
@@ -42,12 +38,12 @@
                 <RelativeLayout
                     android:layout_width="147dp"
                     android:layout_height="match_parent"
-                    android:background="@color/purple_200">
+                    android:background="@drawable/heart_live_two">
 
                     <ImageView
                         android:id="@+id/imageView13"
                         android:layout_width="match_parent"
-                        android:layout_height="104dp"
+                        android:layout_height="100dp"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
                         android:layout_marginStart="0dp"
@@ -56,16 +52,16 @@
 
                     <TextView
                         android:id="@+id/textView14"
-                        android:layout_width="94dp"
-                        android:layout_height="27dp"
+                        android:layout_width="132dp"
+                        android:layout_height="35dp"
                         android:layout_below="@id/imageView13"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginStart="24dp"
-                        android:layout_marginTop="-13dp"
-                        android:layout_marginEnd="29dp"
-                        android:text="HEART RATE"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="-2dp"
+                        android:layout_marginEnd="9dp"
+                        android:text="     HEART RATE"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -82,16 +78,16 @@
                 <RelativeLayout
                     android:layout_width="150dp"
                     android:layout_height="match_parent"
-                    android:background="@color/purple_200">
+                    android:background="@drawable/heart_live_two">
 
                     <ImageView
                         android:id="@+id/imageView14"
-                        android:layout_width="158dp"
-                        android:layout_height="103dp"
+                        android:layout_width="149dp"
+                        android:layout_height="96dp"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
                         android:layout_marginStart="1dp"
-                        android:layout_marginEnd="2dp"
+                        android:layout_marginEnd="0dp"
                         app:srcCompat="@drawable/bp" />
 
                     <TextView
@@ -100,6 +96,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/imageView14"
                         android:layout_centerInParent="true"
+                        android:layout_marginTop="0dp"
                         android:text="BLOOD PRESSURE"
                         android:textColor="@color/black"
                         android:textSize="16sp"
@@ -117,26 +114,22 @@
         android:id="@+id/horizontalScrollView2"
         android:layout_width="364dp"
         android:layout_height="166dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="256dp"
+        android:layout_marginBottom="196dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.34"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:id="@+id/linearLayout4"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="170dp"
             android:layout_marginTop="11dp"
             android:orientation="horizontal"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView6">
+            app:layout_constraintStart_toStartOf="parent">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/insert"
@@ -148,30 +141,30 @@
                 <RelativeLayout
                     android:layout_width="147dp"
                     android:layout_height="match_parent"
-                    android:background="@color/purple_200">
+                    android:background="@drawable/heart_live_two">
 
                     <ImageView
                         android:id="@+id/imageView16"
                         android:layout_width="match_parent"
-                        android:layout_height="104dp"
+                        android:layout_height="102dp"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginStart="9dp"
-                        android:layout_marginEnd="-9dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginEnd="-6dp"
                         app:srcCompat="@drawable/in" />
 
                     <TextView
                         android:id="@+id/textView16"
-                        android:layout_width="94dp"
-                        android:layout_height="27dp"
+                        android:layout_width="132dp"
+                        android:layout_height="32dp"
                         android:layout_below="@id/imageView16"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginStart="42dp"
-                        android:layout_marginTop="-11dp"
-                        android:layout_marginEnd="11dp"
-                        android:text="Insert"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="-4dp"
+                        android:layout_marginEnd="9dp"
+                        android:text="    INSERT DATA"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -188,25 +181,25 @@
                 <RelativeLayout
                     android:layout_width="150dp"
                     android:layout_height="match_parent"
-                    android:background="@color/purple_200">
+                    android:background="@drawable/heart_live_two">
 
                     <ImageView
                         android:id="@+id/imageView17"
-                        android:layout_width="158dp"
-                        android:layout_height="103dp"
+                        android:layout_width="149dp"
+                        android:layout_height="97dp"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
                         android:layout_marginStart="1dp"
-                        android:layout_marginEnd="2dp"
+                        android:layout_marginEnd="0dp"
                         app:srcCompat="@drawable/sh" />
 
                     <TextView
                         android:id="@+id/textView17"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="32dp"
                         android:layout_below="@id/imageView17"
                         android:layout_centerInParent="true"
-                        android:text="Cardiac Record"
+                        android:text="CARDIAC RECORD"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold" />

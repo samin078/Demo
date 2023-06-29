@@ -24,7 +24,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class HeartRateProcess extends Activity {
 
-    // Variables Initialization
+
     private static final String TAG = "HeartRateMonitor";
     private static final AtomicBoolean processing = new AtomicBoolean(false);
     private SurfaceView preview = null;
@@ -32,26 +32,26 @@ public class HeartRateProcess extends Activity {
     private static Camera camera = null;
     private static WakeLock wakeLock = null;
 
-    //Toast
+
     private Toast mainToast;
 
-    //Beats variable
+
     public int Beats = 0;
     public double bufferAvgB = 0;
 
-    //DataBase
+
     public String user;
 
-    //ProgressBar
+
     private ProgressBar ProgHeart;
     public int ProgP = 0;
     public int inc = 0;
 
-    //Freq + timer variable
+
     private static long startTime = 0;
     private double SamplingFreq;
 
-    //Arraylist
+
     public ArrayList<Double> GreenAvgList = new ArrayList<Double>();
     public ArrayList<Double> RedAvgList = new ArrayList<Double>();
     public int counter = 0;
@@ -65,10 +65,9 @@ public class HeartRateProcess extends Activity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             user = extras.getString("Usr");
-            //The key argument here must match that used in the other activity
+
         }
 
-        // XML - Java Connecting
         preview = findViewById(R.id.preview);
         previewHolder = preview.getHolder();
         previewHolder.addCallback(surfaceCallback);
@@ -76,7 +75,7 @@ public class HeartRateProcess extends Activity {
         ProgHeart = findViewById(R.id.HRPB);
         ProgHeart.setProgress(0);
 
-        // WakeLock Initialization : Forces the phone to stay On
+
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
         wakeLock = pm.newWakeLock(PowerManager.FULL_WAKE_LOCK, "DoNotDimScreen");
     }
@@ -111,9 +110,7 @@ public class HeartRateProcess extends Activity {
 
     private final PreviewCallback previewCallback = new PreviewCallback() {
 
-        /**
-         * {@inheritDoc}
-         */
+
         @Override
         public void onPreviewFrame(byte[] data, Camera cam) {
 
@@ -131,8 +128,8 @@ public class HeartRateProcess extends Activity {
             double GreenAvg;
             double RedAvg;
 
-            GreenAvg = ImageProcessing.decodeYUV420SPtoRedBlueGreenAvg(data.clone(), height, width, 3); //1 stands for red intensity, 2 for blue, 3 for green
-            RedAvg = ImageProcessing.decodeYUV420SPtoRedBlueGreenAvg(data.clone(), height, width, 1); //1 stands for red intensity, 2 for blue, 3 for green
+            GreenAvg = ImageProcessing.decodeYUV420SPtoRedBlueGreenAvg(data.clone(), height, width, 3);
+            RedAvg = ImageProcessing.decodeYUV420SPtoRedBlueGreenAvg(data.clone(), height, width, 1);
 
             GreenAvgList.add(GreenAvg);
             RedAvgList.add(RedAvg);
@@ -204,7 +201,7 @@ public class HeartRateProcess extends Activity {
                 ProgHeart.setProgress(ProgP);
             }
 
-            //keeps taking frames tell 30 seconds
+
             processing.set(false);
 
         }

@@ -1,12 +1,16 @@
 package com.example.demo;
 
+
+
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.Toast;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import android.content.Intent;
 
 import java.util.ArrayList;
 
@@ -46,13 +50,21 @@ public class MainActivity4 extends AppCompatActivity {
             while (cursor.moveToNext())
             {
 
-                dia.add(cursor.getString(1));
-                sys.add(cursor.getString(2));
-                heart.add(cursor.getString(0));
-                dt.add(cursor.getString(4));
-                tm.add(cursor.getString(3));
-                heart.add(cursor.getString(5));
+                heart.add(cursor.getString(1));
+                dia.add(cursor.getString(2));
+                sys.add(cursor.getString(3));
+                tm.add(cursor.getString(4));
+                dt.add(cursor.getString(5));
+                heart.add(cursor.getString(6));
             }
         }
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this,MainActivity2.class));
+    }
+
+
 }
+
