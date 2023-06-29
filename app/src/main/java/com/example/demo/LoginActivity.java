@@ -88,11 +88,9 @@ public class LoginActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(LoginActivity.this, "Login Successful.",
                                             Toast.LENGTH_SHORT).show();
-                                    Intent i = new Intent(LoginActivity.this, MainActivity2.class);
-                                    startActivity(i);
-                                    finish();
+
                                     if(FirebaseAuth.getInstance().getCurrentUser().isEmailVerified()) {
-                                        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                                        Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
                                         startActivity(intent);
                                         finish();
                                     }

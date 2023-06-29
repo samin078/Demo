@@ -23,13 +23,6 @@ public class StartVitalSigns extends AppCompatActivity {
                 startActivity(i);
                 finish();
             }
-
-
-
         });
     }
-
-
-
-
 }
