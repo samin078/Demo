@@ -6,9 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import android.content.Intent;
-
 import android.database.Cursor;
-
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -23,10 +21,8 @@ import com.google.android.material.textfield.TextInputEditText;
 
 public class MainActivity3 extends AppCompatActivity {
     EditText heart,sys,dias,date,time,comm;
-
     Button btn,btn1;
-   SQLite DB;
-
+    SQLite DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,18 +30,14 @@ public class MainActivity3 extends AppCompatActivity {
         setContentView(R.layout.activity_main3);
 
         heart = findViewById(R.id.editTextTextPersonName6);
-
-       sys= findViewById(R.id.editTextTextPersonName5);
-
+        sys= findViewById(R.id.editTextTextPersonName5);
         dias= findViewById(R.id.editTextTextPersonName4);
         date= findViewById(R.id.editTextDate);
         time= findViewById(R.id.editTextTime);
         comm=findViewById(R.id.editTextTextPersonName7);
 
         btn = findViewById(R.id.btn_update);
-
         btn1 = findViewById(R.id.button);
-
 
         DB=new SQLite(this);
 
@@ -57,18 +49,12 @@ public class MainActivity3 extends AppCompatActivity {
                 String heartTXT,systolicTXT,diastolicTXT,dateTXT,timeTXT,comTXT;
                 heartTXT = heart.getText().toString();
                 systolicTXT = sys.getText().toString();
-
-
                 diastolicTXT = dias.getText().toString();
-
                 dateTXT = date.getText().toString();
                 timeTXT = time.getText().toString();
                 comTXT=comm.getText().toString();
 
-
-
                 Boolean checkinsertdata=DB.insertuserdata(heartTXT,systolicTXT,diastolicTXT,dateTXT,timeTXT,comTXT);
-
                 if(checkinsertdata==true){
                     Toast.makeText(MainActivity3.this, "New measurements are inserted", Toast.LENGTH_SHORT).show();
 
@@ -115,5 +101,4 @@ public class MainActivity3 extends AppCompatActivity {
         super.onBackPressed();
         startActivity(new Intent(this,MainActivity2.class));
     }
-
 }

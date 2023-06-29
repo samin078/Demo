@@ -29,7 +29,7 @@ public class MainActivity4 extends AppCompatActivity {
         dia=new ArrayList<>();
         sys=new ArrayList<>();
         tm=new ArrayList<>();
-       dt=new ArrayList<>();
+        dt=new ArrayList<>();
         cm=new ArrayList<>();
         recyclerView=findViewById(R.id.rr);
         adapter=new MyAdapter(this,heart,dia,sys,tm,dt,cm);
