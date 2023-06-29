@@ -8,6 +8,7 @@
     <string name="click_to_register">Click to register</string>
     <string name="logout">Logout</string>
     <string name="name">Name</string>
+
     <string name="str">- Lightly place your index finger on \n   the rear camera.\n- Make sure the camera is fully \n   covered. \n- Measure in a shaded environment. \n Dont move your finger until the \n   measurement is complete. \n Finally place your finger then press \n   start. </string>
     <string name="cardio_record">CardiacRecord</string>
     <string name="heart_rate">Heart Rate</string>
@@ -15,5 +16,8 @@
     <string name="diastolic_pressure">Diastolic Pressure</string>
     <string name="time_measurement">Time measurement</string>
     <string name="date_measurement">Date measurement</string>
+
+
+    <string name="update">Update</string>
 
 </resources>

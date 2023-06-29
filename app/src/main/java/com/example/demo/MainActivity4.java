@@ -1,13 +1,16 @@
 package com.example.demo;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
+
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.Toast;
+
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import android.content.Intent;
 
 import java.util.ArrayList;
 
@@ -46,6 +49,7 @@ public class MainActivity4 extends AppCompatActivity {
         {
             while (cursor.moveToNext())
             {
+
                 heart.add(cursor.getString(1));
                 dia.add(cursor.getString(2));
                 sys.add(cursor.getString(3));
@@ -60,4 +64,7 @@ public class MainActivity4 extends AppCompatActivity {
         super.onBackPressed();
         startActivity(new Intent(this,MainActivity2.class));
     }
+
+
 }
+
