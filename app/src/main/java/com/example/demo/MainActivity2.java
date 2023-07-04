@@ -56,7 +56,7 @@ insertd();
 
 
     private void insertd() {
-        Intent intent=new Intent(MainActivity2.this,MainActivity3.class);
+        Intent intent=new Intent(MainActivity2.this,MainActivity5.class);
         startActivity(intent);
         finish();
     }
