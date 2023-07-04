@@ -6,15 +6,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import android.content.Intent;
-
 import android.database.Cursor;
-
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 
@@ -23,9 +23,7 @@ import com.google.android.material.textfield.TextInputEditText;
 
 public class MainActivity3 extends AppCompatActivity {
     EditText heart,sys,dias,date,time,comm;
-
     Button btn,btn1;
-   SQLite DB;
 
 
     @Override
@@ -34,9 +32,7 @@ public class MainActivity3 extends AppCompatActivity {
         setContentView(R.layout.activity_main3);
 
         heart = findViewById(R.id.editTextTextPersonName6);
-
-       sys= findViewById(R.id.editTextTextPersonName5);
-
+        sys= findViewById(R.id.editTextTextPersonName5);
         dias= findViewById(R.id.editTextTextPersonName4);
         date= findViewById(R.id.editTextDate);
         time= findViewById(R.id.editTextTime);
@@ -44,55 +40,78 @@ public class MainActivity3 extends AppCompatActivity {
 
         btn = findViewById(R.id.btn_update);
 
-        btn1 = findViewById(R.id.button);
 
 
-        DB=new SQLite(this);
 
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Boolean er;
                 String heartTXT,systolicTXT,diastolicTXT,dateTXT,timeTXT,comTXT;
                 heartTXT = heart.getText().toString();
                 systolicTXT = sys.getText().toString();
-
-
                 diastolicTXT = dias.getText().toString();
-
                 dateTXT = date.getText().toString();
                 timeTXT = time.getText().toString();
                 comTXT=comm.getText().toString();
 
 
-
-                Boolean checkinsertdata=DB.insertuserdata(heartTXT,systolicTXT,diastolicTXT,dateTXT,timeTXT,comTXT);
-
-                if(checkinsertdata==true){
-                    Toast.makeText(MainActivity3.this, "New measurements are inserted", Toast.LENGTH_SHORT).show();
-
-                }
-                else
+                if(heartTXT.isEmpty())
                 {
-                    Toast.makeText(MainActivity3.this, "Found no measurements details", Toast.LENGTH_SHORT).show();
-
+                    heart.setError("Required");
+                    er=true;
                 }
-
-
-            }
-        });
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Cursor res= DB.getdata();
-                if(res.getCount()==0)
+                else if(Integer.parseInt(heartTXT)<30)
                 {
-                    Toast.makeText(MainActivity3.this,"Found No Entry",Toast.LENGTH_SHORT).show();
-                    return;
+                    heart.setError("Minimum Value is 30");
+                    er=true;
                 }
-                StringBuffer buffer=new StringBuffer();
+                else if(Integer.parseInt(heartTXT)>120)
+                {
+                    heart.setError("Maximum Value is 120");
+                    er=true;
+                }
+
+                if(systolicTXT.isEmpty())
+                {
+                    sys.setError("Required");
+                    er=true;
+                }
+                else if(Integer.parseInt(systolicTXT)<60)
+                {
+                    sys.setError("Minimum Value is 60");
+                    er=true;
+
+                }
+                else if(Integer.parseInt(systolicTXT)>150)
+                {
+                    sys.setError("Maximum Value is 150");
+                    er=true;
+                }
+
+
+                if(dias.getText().toString().isEmpty())
+                {
+                    dias.setError("Required");
+                    er=true;
+                }
+                else if(Integer.parseInt(diastolicTXT)<100)
+                {
+                    dias.setError("Minimum Value is 100");
+                    er=true;
+                }
+                else if(Integer.parseInt(diastolicTXT)>200)
+                {
+                    dias.setError("Maximum Value is 200");
+                    er=true;
+                }
+
+
+
+
+
+               /* StringBuffer buffer=new StringBuffer();
                 while(res.moveToNext()){
                     buffer.append("Diastolic Pressure:"+res.getString(0)+"mmHg\n");
                     buffer.append("Systolic Pressure:"+res.getString(1)+"mmHg\n");
@@ -106,7 +125,7 @@ public class MainActivity3 extends AppCompatActivity {
                 builder.setCancelable(true);
                 builder.setTitle("User Entries");
                 builder.setMessage(buffer.toString());
-                builder.show();
+                builder.show();*/
             }
         });
     }
@@ -115,5 +134,4 @@ public class MainActivity3 extends AppCompatActivity {
         super.onBackPressed();
         startActivity(new Intent(this,MainActivity2.class));
     }
-
 }

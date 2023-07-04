@@ -8,7 +8,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="15dp"
-    tools:context=".MainActivity3">
+    tools:context=".MainActivity5">
 
 
     <TextView
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="173dp"
         android:layout_marginEnd="140dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="16dp"
         android:text="INSERT"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +63,7 @@
         android:layout_width="227dp"
         android:layout_height="49dp"
         android:layout_marginStart="88dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="81dp"
         android:drawableLeft="@drawable/ic_baseline_calendar_month_24"
         android:ems="10"
@@ -71,6 +71,7 @@
         android:inputType="date"
         android:textColorHint="@color/teal_700"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTime" />
 
@@ -153,38 +154,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginEnd="143dp"
-        android:layout_marginBottom="4dp"
-        android:text="VIEW"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="44dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_baseline_edit_24" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="44dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_baseline_delete_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
