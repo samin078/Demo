@@ -59,7 +59,7 @@ public class DetailActivity extends AppCompatActivity {
 
                 reference.child(key).removeValue();
                 Toast.makeText(DetailActivity.this,"Deleted", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), MainActivity2.class));
+                startActivity(new Intent(getApplicationContext(), MainActivity4.class));
                 finish();
 /*
                 //StorageReference storageReference = storage.getReferenceFromUrl(imageUrl);

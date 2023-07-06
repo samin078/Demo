@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/heart_live_two"
     android:gravity="center"
+    android:id="@+id/update_activity"
     android:orientation="vertical"
     android:padding="15dp"
     tools:context=".UpdateActivity">

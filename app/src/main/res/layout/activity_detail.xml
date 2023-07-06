@@ -63,9 +63,34 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
+    <com.github.clans.fab.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editButton"
+        android:src="@drawable/ic_baseline_edit_24"
+        app:fab_showShadow="true"
+        android:visibility="visible"
+        app:fab_colorNormal="@color/green"
+        app:fab_size="mini"/>
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_delete_24"
+        android:visibility="visible"
+        app:fab_colorNormal="@color/red"
+        app:fab_showShadow="true"
+        app:fab_size="mini" />
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
+
+
 
         <com.github.clans.fab.FloatingActionMenu
             android:layout_width="wrap_content"
@@ -75,30 +100,18 @@
             app:menu_fab_size="normal"
             android:layout_marginBottom="20dp"
             android:layout_marginEnd="20dp"
+            android:id="@+id/btnList"
             app:menu_colorPressed="@color/purple_200"
             app:menu_colorNormal="@color/purple_200"
             app:menu_icon="@drawable/ic_baseline_format_list_bulleted_24"
             app:menu_openDirection="up"
+            android:clickable="true"
             app:menu_showShadow="true"
             >
 
-            <com.github.clans.fab.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/editButton"
-                android:src="@drawable/ic_baseline_edit_24"
-                app:fab_showShadow="true"
-                app:fab_colorNormal="@color/green"
-                app:fab_size="mini"/>
 
-            <com.github.clans.fab.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/deleteButton"
-                android:src="@drawable/ic_baseline_delete_24"
-                app:fab_showShadow="true"
-                app:fab_colorNormal="@color/red"
-                app:fab_size="mini"/>
+
+
 
 
 

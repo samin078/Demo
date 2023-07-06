@@ -56,14 +56,14 @@ public class MainActivity4 extends AppCompatActivity {
         builder.setCancelable(false);
         builder.setView(R.layout.progress_layout);
         AlertDialog dialog = builder.create();
-        dialog.show();
+        //dialog.show();
 
         dataList = new ArrayList<>();
         MyAdapter adapter = new MyAdapter(MainActivity4.this, dataList);
         recyclerView.setAdapter(adapter);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Insert");
-        dialog.show();
+        //dialog.show();
 
         eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -75,7 +75,7 @@ public class MainActivity4 extends AppCompatActivity {
                     dataList.add(dataClass);
                 }
                 adapter.notifyDataSetChanged();
-                dialog.dismiss();
+               // dialog.dismiss();
             }
 
             @Override
