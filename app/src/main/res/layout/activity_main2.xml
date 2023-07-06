@@ -111,8 +111,8 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="119dp"
-        android:layout_height="116dp"
+        android:layout_width="124dp"
+        android:layout_height="117dp"
         android:layout_marginStart="136dp"
         android:layout_marginEnd="137dp"
         android:layout_marginBottom="92dp"
@@ -120,7 +120,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/df" />
+        app:srcCompat="@drawable/out" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
