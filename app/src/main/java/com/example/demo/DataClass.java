@@ -8,26 +8,50 @@ public class DataClass {
     private String dataDate;
     private String dataCom;
 
+    /**
+     * this returns diastolic value
+     * @return data
+     */
     public String getDataDia() {
         return dataDia;
     }
 
+    /**
+     * this returns systolic value
+     * @return data
+     */
     public String getDataSys() {
         return dataSys;
     }
 
+    /**
+     * this returns heartrate value
+     * @return data
+     */
     public String getDataHrt() {
         return dataHrt;
     }
 
+    /**
+     * this returns time value
+     * @return data
+     */
     public String getDataTime() {
         return dataTime;
     }
 
+    /**
+     * this returns date value
+     * @return date
+     */
     public String getDataDate() {
         return dataDate;
     }
 
+    /**
+     * this returns comment data
+     * @return data
+     */
     public String getDataCom() {
         return dataCom;
     }

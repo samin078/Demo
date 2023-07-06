@@ -18,11 +18,23 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     private Context context;
     private List<DataClass> dataList;
 
+    /**
+     * this is used to show data from adapter
+     * @param context
+     * @param dataList
+     */
     public MyAdapter(Context context, List<DataClass> dataList) {
         this.context = context;
         this.dataList = dataList;
     }
 
+    /**
+     * this is used to get the value under parent
+     * On Create ViewHolder method is Used to set the layout of Each List and bind it
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -32,12 +44,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.dia_id.setText(dataList.get(position).getDataDia());
-        holder.sys_id.setText(dataList.get(position).getDataSys());
-        holder.heart_id.setText(dataList.get(position).getDataHrt());
-        holder.tm_id.setText(dataList.get(position).getDataTime());
-        holder.dt_id.setText(dataList.get(position).getDataDate());
-        holder.com_id.setText(dataList.get(position).getDataCom());
+        holder.dia_id.setText("Diastolic Pressure:"+dataList.get(position).getDataDia()+"mmHg");
+        holder.sys_id.setText("Systolic Pressure:"+dataList.get(position).getDataSys()+"mmHg");
+        holder.heart_id.setText("Heart Rate:"+dataList.get(position).getDataHrt()+"bpm");
+        holder.tm_id.setText("Time:"+dataList.get(position).getDataTime());
+        holder.dt_id.setText("Date:"+dataList.get(position).getDataDate());
+        holder.com_id.setText("Comment:"+dataList.get(position).getDataCom());
 
         holder.recCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +67,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         });
     }
 
+    /**
+     * this returns the size of datalist by counting
+     * @return list of data
+     */
     @Override
     public int getItemCount() {
         return dataList.size();
