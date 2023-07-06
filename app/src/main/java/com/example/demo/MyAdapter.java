@@ -61,6 +61,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
                 intent.putExtra("Time",dataList.get(holder.getAdapterPosition()).getDataTime());
                 intent.putExtra("Date",dataList.get(holder.getAdapterPosition()).getDataDate());
                 intent.putExtra("Comment",dataList.get(holder.getAdapterPosition()).getDataCom());
+                intent.putExtra("Key",dataList.get(holder.getAdapterPosition()).getKey());
+
 
                 context.startActivity(intent);
             }

@@ -8,10 +8,18 @@ public class DataClass {
     private String dataDate;
     private String dataCom;
 
-    /**
-     * this returns diastolic value
-     * @return data
-     */
+
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    private String key;
+
     public String getDataDia() {
         return dataDia;
     }
